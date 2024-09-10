@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Fraud Detection API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Fraud Detection </h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="category" placeholder="category" required="required" /><br>
+    	<input type="text" name="amt" placeholder="amt" required="required" /><br>
+        <input type="text" name="gender" placeholder="gender" required="required" /><br>
+        <input type="text" name="state" placeholder="state" required="required" /><br>
+        <input type="text" name="city_pop" placeholder="city_pop" required="required" /><br>
+        <input type="text" name="hour" placeholder="hour" required="required" /><br>
+        <input type="text" name="age" placeholder="age" required="required" /><br>
+        <input type="text" name="day_of_week" placeholder="day_of_week" required="required" /><br>
+        <input type="text" name="month" placeholder="month" required="required" /><br>
+        <input type="text" name="lat_dist_cust_merch" placeholder="lat_dist_cust_merch" required="required" /><br>
+        <input type="text" name="long_dist_cust_merch" placeholder="long_dist_cust_merch" required="required" /><br>
+        <input type="text" name="transaction_lag" placeholder="transaction_lag" required="required" /><br>
+        <input type="text" name="long_dist_prev_merch" placeholder="long_dist_prev_merch" required="required" /><br>
+        <input type="text" name="lat_dist_prev_merch" placeholder="lat_dist_prev_merch" required="required" /><br>
+        
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>
